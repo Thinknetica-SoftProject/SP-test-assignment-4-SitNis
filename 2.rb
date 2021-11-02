@@ -15,4 +15,12 @@
 #
 #
 ## Решение:
+arr = []
 
+file_lines = File.readlines("data/3.txt")
+
+file_lines.each do |line|
+arr << line.strip
+end
+
+puts(arr[0][1])

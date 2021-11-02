@@ -10,4 +10,19 @@
 #
 ## Решение:
 
+arr = []
+code = 0
+file_lines = File.readlines("data/3.txt")
 
+file_lines.each do |line|
+arr << line.strip
+end
+
+arr.each do |string_number|
+	string_number = string_number.split("\t")
+	diff = 0
+	diff = string_number.max.to_i - string_number.min.to_i
+	code +=diff
+end
+
+puts(code)
