@@ -15,11 +15,20 @@
 #
 #
 ## Решение:
-a = gets.chomp();
-
 require 'digest'
-md5 = Digest::MD5.new           
-md5.update a                        
-if md5.hexdigest(a)[0..4] == '00000'
-	puts a.slice(/\d+/)
+input_string = gets.chomp();
+md5 = Digest::MD5.new          
+
+i = 0;
+loop do
+	md5 << "#{i.to_s}"
+	my_md = md5.hexdigest
+	if my_md[0..4] == "00000";
+		puts i
+		break
+	end
+	md5.reset
+	md5.update input_string
+	i += 1;
 end
+
