@@ -15,12 +15,11 @@
 #
 #
 ## Решение:
-arr = []
+a = gets.chomp();
 
-file_lines = File.readlines("data/3.txt")
-
-file_lines.each do |line|
-arr << line.strip
+require 'digest'
+md5 = Digest::MD5.new           
+md5.update a                        
+if md5.hexdigest(a)[0..4] == '00000'
+	puts a.slice(/\d+/)
 end
-
-puts(arr[0][1])
