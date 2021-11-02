@@ -17,3 +17,21 @@
 ## Решение:
 
 
+arr = []
+paper_size = 0
+file_lines = File.readlines("data/4.txt")
+
+file_lines.each do |line|
+arr << line.strip
+end
+
+arr.each do |size|
+	arr = size.split('x').sort!{ |a , b| a.to_i <=> b.to_i }
+	len = arr[0].to_i
+	high = arr[1].to_i
+	width = arr[3].to_i
+	paper_size += 2*width*len+2*len*high+2*high*width+len*high
+end
+
+puts paper_size
+
