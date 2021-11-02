@@ -21,7 +21,7 @@ end
 arr.each do |string_number|
 	string_number = string_number.split("\t")
 	diff = 0
-	diff = string_number.max.to_i - string_number.min.to_i
+	diff = string_number.max { |a, b| a.to_i <=> b.to_i }.to_i - string_number.min { |a, b| a.to_i <=> b.to_i }.to_i
 	code +=diff
 end
 
