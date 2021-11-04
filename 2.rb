@@ -21,14 +21,15 @@ md5 = Digest::MD5.new
 
 i = 0;
 loop do
+	md5.update input_string
 	md5 << "#{i.to_s}"
 	my_md = md5.hexdigest
 	if my_md[0..4] == "00000";
 		puts i
+		puts my_md
 		break
 	end
 	md5.reset
-	md5.update input_string
 	i += 1;
 end
 
