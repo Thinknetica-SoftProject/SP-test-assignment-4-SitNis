@@ -28,6 +28,7 @@ loop do
 		puts i
 		break
 	end
+	
 	md5.reset
 	i += 1;
 end
