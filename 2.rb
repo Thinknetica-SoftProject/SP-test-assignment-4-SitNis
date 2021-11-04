@@ -26,7 +26,6 @@ loop do
 	my_md = md5.hexdigest
 	if my_md[0..4] == "00000";
 		puts i
-		puts my_md
 		break
 	end
 	md5.reset
